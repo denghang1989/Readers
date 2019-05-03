@@ -22,19 +22,13 @@
     
     <div class="imageUpload">
       <uploader
-        :max="9"
-        :images="images"
-        :handle-click="true"
-        :show-header="false"
-        :readonly="true"
-        :upload-url="uploadUrl"
-        name="img"
-        :params="params"
-        size="small"
-        @preview="previewMethod"
-        @add-image="addImageMethod"
-        @remove-image="removeImageMethod"
-      ></uploader>
+        :files=[]
+        v-model="fileList"
+        limit="9"
+        @onChange="onChange"
+      >
+      </uploader>
+    
     </div>
     
     <box gap="10px">
@@ -46,7 +40,7 @@
 <script>
   import {Group, XInput, Datetime, XNumber, XTextarea, XButton, Box} from 'vux';
   import {openId} from "../store";
-  import Uploader from "vux-uploader";
+  import Uploader from 'vux-uploader-component'
   
   export default {
     name: "Activity",
@@ -54,20 +48,12 @@
     data() {
       return {
         minuteListValue: "",
-        images: [],
-        uploadUrl: "",
-        params: null
+        fileList: []
       }
     },
     methods: {
-      previewMethod() {
-      
-      },
-      addImageMethod() {
-      
-      },
-      removeImageMethod() {
-      
+      onChange(fileList) {
+        console.log(fileList);
       }
     },
   }
