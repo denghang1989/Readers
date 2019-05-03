@@ -26,6 +26,9 @@
         v-model="fileList"
         limit="9"
         @onChange="onChange"
+        @onCancel="onCancel"
+        @onSuccess="onSuccess"
+        @onError="onError"
       >
       </uploader>
     
@@ -53,7 +56,16 @@
     },
     methods: {
       onChange(fileList) {
-        console.log(fileList);
+      
+      },
+      onCancel(xhr) {
+      
+      },
+      onSuccess(result) {
+      
+      },
+      onError(fileList) {
+      
       }
     },
   }
