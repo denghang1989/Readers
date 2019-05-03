@@ -20,6 +20,23 @@
       <x-textarea :max="100"></x-textarea>
     </group>
     
+    <div class="imageUpload">
+      <uploader
+        :max="9"
+        :images="images"
+        :handle-click="true"
+        :show-header="false"
+        :readonly="true"
+        :upload-url="uploadUrl"
+        name="img"
+        :params="params"
+        size="small"
+        @preview="previewMethod"
+        @add-image="addImageMethod"
+        @remove-image="removeImageMethod"
+      ></uploader>
+    </div>
+    
     <box gap="10px">
       <x-button text="发布活动" type="primary"></x-button>
     </box>
@@ -29,13 +46,28 @@
 <script>
   import {Group, XInput, Datetime, XNumber, XTextarea, XButton, Box} from 'vux';
   import {openId} from "../store";
+  import Uploader from "vux-uploader";
   
   export default {
     name: "Activity",
-    components: {Box, XButton, Group, XInput, Datetime, XNumber, XTextarea},
+    components: {Uploader, Box, XButton, Group, XInput, Datetime, XNumber, XTextarea},
     data() {
       return {
-        minuteListValue: ""
+        minuteListValue: "",
+        images: [],
+        uploadUrl: "",
+        params: null
+      }
+    },
+    methods: {
+      previewMethod() {
+      
+      },
+      addImageMethod() {
+      
+      },
+      removeImageMethod() {
+      
       }
     },
   }
