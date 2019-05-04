@@ -37,16 +37,16 @@
       return {
         personInfo: {
           openId: "135",
-          name: "李芳华",
-          gender: "女",
+          name: "",
+          gender: "",
           age: 14,
-          industry: "金融",
-          profession: "销售",
-          wechat: "lfh880102",
-          phone: "15843321854",
-          favoriteKindOfBook: "爱情",
-          selfIntroduction: "因为太胖而无法自拔",
-          constellation: '摩羯座',
+          industry: "",
+          profession: "",
+          wechat: "",
+          phone: "",
+          favoriteKindOfBook: "",
+          selfIntroduction: "",
+          constellation: '',
           constellationValue: ["金牛座"]
         },
         starts: [["白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座", "天蝎座", "射手座", "摩羯座", "水瓶座", "双鱼座"]]
