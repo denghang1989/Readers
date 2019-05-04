@@ -1,7 +1,7 @@
 <template>
   <div class="reader-home">
     <ul class="list-ui">
-      <li class="list-item" v-for="(item,index) in activityList" :key="index">
+      <li class="list-item" v-for="(item,index) in activityList" :key="index" @click="handleClick(item,index)">
         <BookDetail :activity="item"></BookDetail>
       </li>
     </ul>
@@ -11,7 +11,7 @@
 <script>
   import BookDetail from "../components/BookDetail";
   import {openId} from "../store";
-
+  
   export default {
     name: "Home",
     components: {BookDetail},
@@ -25,6 +25,9 @@
         this.$http.get(`/api/activity/all?openId=${openId}`).then(({data}) => {
           this.activityList = data;
         })
+      },
+      handleClick(item, index) {
+        this.$router.push({path: "/activitydetail", query: {data: item}})
       }
     },
     

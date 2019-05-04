@@ -7,6 +7,7 @@ import EditPerson from '@/pages/EditPerson';
 import AboutUs from '@/pages/AboutUs';
 import Initiation from '@/pages/Initiation';
 import JionIn from '@/pages/JionIn';
+import ActivityDetail from '@/pages/ActivityDetail';
 
 Vue.use(Router);
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/jion',
       name: 'JionIn',
       component: JionIn,
+    },
+    {
+      path: '/activitydetail',
+      name: 'ActivityDetail',
+      component: ActivityDetail,
     }
   ]
 })
